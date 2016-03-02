@@ -5,6 +5,7 @@ require 'monsoon/droplet'
 module Monsoon
   @@streams = []
   @@versions_schema = {}
+  @@default_stream = nil
 
   def self.streams
     @@streams
@@ -20,5 +21,13 @@ module Monsoon
 
   def self.versions_schema=(versions_schema)
     @@versions_schema = versions_schema
+  end
+
+  def self.default_stream
+    @@default_stream
+  end
+
+  def self.default_stream=(stream_name)
+    @@default_stream = stream_name
   end
 end

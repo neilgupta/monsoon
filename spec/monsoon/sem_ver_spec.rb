@@ -9,6 +9,13 @@ describe Monsoon::SemVer do
       expect(sv.patch).to eq(0)
     end
 
+    it 'parses a semantic version that only has 2 parts' do
+      sv = Monsoon::SemVer.new('1.1')
+      expect(sv.major).to eq(1)
+      expect(sv.minor).to eq(1)
+      expect(sv.patch).to eq(0)
+    end
+
     it 'parses a semantic version string with additional info' do
       sv = Monsoon::SemVer.new('1.2.3-alpha')
       expect(sv.major).to eq(1)
